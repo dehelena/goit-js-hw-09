@@ -7,7 +7,6 @@ const stopBtn = document.querySelector('[data-stop]');
 let timerId = null;
 
 function onStartBtnClick() {
-  console.log('Hello');
   timerId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
