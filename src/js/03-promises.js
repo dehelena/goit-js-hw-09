@@ -27,13 +27,14 @@ function onFormSubmit(e) {
   let amountEl = Number(amount.value);
 
   for (let i = 1; i <= amountEl; i += 1) {
-    delayEl += stepEl;
     createPromise(i, delayEl)
       .then(result => {
         Notiflix.Notify.success(result);
       })
       .catch(err => Notiflix.Notify.failure(err));
+    delayEl += stepEl;
   }
+  e.target.reset();
 }
 
 formEl.addEventListener('submit', onFormSubmit);
